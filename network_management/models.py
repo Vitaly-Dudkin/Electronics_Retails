@@ -41,7 +41,7 @@ class Network(models.Model):
     street = models.CharField(max_length=150, verbose_name='Street')
     house_number = models.CharField(max_length=50, verbose_name='Number of house')
     supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE, verbose_name='Supplier')
-    products = models.ManyToManyField('Product', verbose_name='Products',related_name='networks')
+    products = models.ManyToManyField('Product', verbose_name='Products',related_name='networks', blank=True)
     debt = models.DecimalField(max_digits=15, decimal_places=2, verbose_name='Debt')
     level = models.IntegerField(choices=LEVEL_CHOICES, verbose_name='Level')
 
